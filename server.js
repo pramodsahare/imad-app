@@ -6,37 +6,27 @@ var app = express();
 app.use(morgan('combined'));
 
 var articles ={
-    articleOne: {
+    `article-one: {
     title: 'Article One | Pramod Sahare',
     heading: 'Article One',
     date: 'Aug 15, 2017',
     content:` <p> his is content for my first page. This is content for my first page. This is content for my first page
                 This is content for my first page. This is content for my first page. This is content for my first page
                 This is content for my first page. This is content for my first page. This is content for my first page
-              </p> 
-     <p>        This is content for my first page. This is content for my first page. This is content for my first page.
-                This is content for my first page. This is content for my first page. This is content for my first page.
-                This is content for my first page. This is content for my first page. This is content for my first page.
-    </p>
-    <p>         This is content for my first page. This is content for my first page. This is content for my first page.
-                This is content for my first page. This is content for my first page. This is content for my first page.
-                This is content for my first page. This is content for my first page. This is content for my first page.
-    </p> `
+                <p>`
+    },
    
-    
-},
-    articleTwo: {title: 'Article Two | Pramod Sahare',
+    `article-two: {title: 'Article Two | Pramod Sahare',
     heading: 'Article Two',
     date: 'Aug 10, 2017',
     content:` <p> his is content for my first page. This is content for my first page. This is content for my first page
                 This is content for my first page. This is content for my first page. This is content for my first page
                 This is content for my first page. This is content for my first page. This is content for my first page
-             
+    
      
     </p> `
-   
-    },
-    articleThree: {title: 'Article Three | Pramod Sahare',
+       },
+    `article-three:{title: 'Article Three | Pramod Sahare',
     heading: 'Article Three',
     date: 'Aug 25, 2017',
     content:` <p> his is content for my first page. This is content for my first page. This is content for my first page
@@ -95,17 +85,14 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/article-one', function (req, res) {
-  res.send(createTemplate(ArticleOne));
+app.get('/:articleName', function (req, res) {
+    //articleName=article-one
+    //articles(articleName)==content object for article one
+    var articleName=req.params.articleName;
+     res.send(createTemplate(articles[articleName]));
 });
 
-app.get('/article-two', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
-});
 
-app.get('/article-three', function (req, res) {
-   res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
-});
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
