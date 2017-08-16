@@ -24,7 +24,7 @@ var ArticleOne ={
    
     
 };
-
+function createTemplate (data) {
 var htmlTemplate= `
 <html>
     <head>
@@ -50,13 +50,12 @@ var htmlTemplate= `
             ${content}
         </div>
         </div>
+        
     </body>
 </html>
 
-
-
 `;
-
+}
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
