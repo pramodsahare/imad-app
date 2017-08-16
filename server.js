@@ -9,10 +9,7 @@ var articles = {
    `article-one: {title: 'Article One | Pramod Sahare',
     heading: 'Article One',
     date: 'Aug 15, 2017',
-    content: ` <p> This is content for my first page. This is content for my first page. This is content for my first page
-                This is content for my first page. This is content for my first page. This is content for my first page
-                This is content for my first page. This is content for my first page. This is content for my first page
-                <p>`
+    content: ` <p> Hello  Article One <p>`
     },
    
    `article-two: {title: 'Article Two | Pramod Sahare',
@@ -28,10 +25,8 @@ var articles = {
     `article-three:{title: 'Article Three | Pramod Sahare',
     heading: 'Article Three',
     date: 'Aug 25, 2017',
-    content:` <p> his is content for my first page. This is content for my first page. This is content for my first page
-                This is content for my first page. This is content for my first page. This is content for my first page
-                This is content for my first page. This is content for my first page. This is content for my first page
-              </p> `
+    content:  content: ` <p> Hello  Article One <p>`
+    },
      
    
    
